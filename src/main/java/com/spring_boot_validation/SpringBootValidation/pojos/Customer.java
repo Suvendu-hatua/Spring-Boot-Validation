@@ -1,5 +1,6 @@
 package com.spring_boot_validation.SpringBootValidation.pojos;
 
+import com.spring_boot_validation.SpringBootValidation.annotations.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -18,11 +19,23 @@ public class Customer {
     @Pattern(regexp = "^[a-zA-Z0-9]{6}$",message = "Pin Number only contains alphabet and digits of 6.")
     private String pinNumber;
 
-    public @Pattern(regexp = "^[a-zA-Z0-9]{6}$", message = "Pin Number only contains alphabet and digits of 6.") String getPinNumber() {
+    @NotNull(message = "is required!")
+    @CourseCode(value = "XYZ",message = "Must be Start of XYZ")
+    private String courseCode;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
+
+    public  String getPinNumber() {
         return pinNumber;
     }
 
-    public void setPinNumber(@Pattern(regexp = "^[a-zA-Z0-9]{6}$", message = "Pin Number only contains alphabet and digits of 6.") String pinNumber) {
+    public void setPinNumber( String pinNumber) {
         this.pinNumber = pinNumber;
     }
 
@@ -59,6 +72,7 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", passNumber=" + passNumber +
                 ", pinNumber='" + pinNumber + '\'' +
+                ", courseCode='" + courseCode + '\'' +
                 '}';
     }
 }
