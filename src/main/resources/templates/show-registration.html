@@ -21,6 +21,10 @@
                 Last Name:
                 <input type="text" th:field="*{lastName}" placeholder="Enter Last Name">
                 <br><br>
+                Number of Passes:
+                <input type="text" th:field="${customer.passNumber}" placeholder="Enter your Pass Number">
+                <span th:if="${#fields.hasErrors('passNumber')}" th:errors="*{passNumber}" class="error"></span>
+                <br> <br>
                 <input type="submit" value="Submit">
             </form>
         </div>

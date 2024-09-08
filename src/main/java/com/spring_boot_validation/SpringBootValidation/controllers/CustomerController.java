@@ -32,7 +32,8 @@ public class CustomerController {
         if(bindingResult.hasErrors()){
             return "show-registration";
         }else{
-            System.out.println("Customer FirstName: "+"|"+customer.getFirstName()+"|"+"\n");
+//            System.out.println("Customer FirstName: "+"|"+customer.getFirstName()+"|"+"\n");
+            System.out.println(customer);
             return "submit-registration";
         }
     }
