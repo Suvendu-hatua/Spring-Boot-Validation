@@ -25,7 +25,13 @@
                 <input type="text" th:field="${customer.passNumber}" placeholder="Enter your Pass Number">
                 <span th:if="${#fields.hasErrors('passNumber')}" th:errors="*{passNumber}" class="error"></span>
                 <br> <br>
+
+                Pin Number: <input type="text" th:field="${customer.pinNumber}" placeholder="Enter Your Pin Number"/>
+                <span th:if="${#fields.hasErrors('pinNumber')}" th:errors="*{pinNumber}" class="error"></span>
+                <br><br>
+
                 <input type="submit" value="Submit">
+
             </form>
         </div>
 </body>
